@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<title>181109 New Album</title>
+	<style>
+		body{background:black;}
+		a:link, a:active, a:visited, a:hover{ text-decoration:  none; }
+		a:link, a:active, a:visited { color: yellow; }
+		a:hover{background:yellow; color:blue;}
+
+		#videoBox {
+
+			display:none;
+			position: absolute; left: calc(50% - 400px); top: calc(50% - 150px); width:800px;}
+		#pressure {width:800px;}
+		#simul {
+			transition: 1s;
+			opacity:0;
+			width:100%;
+			position:absolute;
+			top:0px;
+			left:0px;
+		}
+		#univ {
+
+			width:100%; opacity:0.2; display:block; margin:auto;
+			margin-top:-200px;
+			transition: 1s;
+		}
+		#title {
+			transition: 2s;
+			transition-delay: 1s;
+			display: block;
+			position: absolute;
+			left: calc(50% - 640px);
+			top:20px;
+			opacity: 0;
+		}
+
+		#baaAm {
+
+			width:50px; height:50px;
+			background-color:pink;
+			position:absolute;
+			
+			animation: boom 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+		}
+		#baaAm a{display:block; text-align:center; font-size:45px; line-height:50px;}
+		
+
+		@keyframes boom {
+			0%		{background-color:rgb(255,0,255); left:50%; top:100px; transform: rotate(0deg);}
+			20%		{background-color:blue; left:100px; top:calc(100% - 150px); transform: rotate(360deg);}
+			40%		{background-color:rgb(200,0,255); left:calc(100% - 150px); top:25%; transform: rotate(720deg);}
+			60%		{background-color:red; left:100px; top:25%; transform: rotate(360deg);}
+			80%		{background-color:blue; left:calc(100% - 150px); top:calc(100% - 150px); transform: rotate(720deg);}
+			100%	{background-color:rgb(255,0,255); left:50%; top:100px; transform: rotate(360deg);}
+			}
+		
+	</style>
+</head>
+<body>
+	<img id="simul" src="simull.png">
+	
+	<img id="univ" src="univ1.gif" style="">
+	<img id="title" src="title.png">
+	<div id="baaAm"><a>?</a>
+	</div>
+	<div id="videoBox">
+		<video id="pressure" src="MUSEPressure.mp4" type="video/mp4" controls></video>
+	</div>
+
+	
+	<script type="text/javascript">
+		var toggle = "off"
+		title.onclick = function(){
+			if(toggle == "off"){
+				toggle = "on"
+				univ.style.opacity = 0;
+				baaAm.style.animationPlayState = "paused";
+				
+			}else if(toggle == "on"){
+				toggle = "off"
+				univ.style.opacity = 0.2;
+				baaAm.style.animationPlayState = "running";
+				
+			}
+
+		}
+		univ.onclick = function(){
+			if(toggle == "off"){
+				toggle = "on"
+				univ.style.opacity = 0;
+				baaAm.style.animationPlayState = "paused";
+				
+			}else if(toggle == "on"){
+				toggle = "off"
+				univ.style.opacity = 0.2;
+				baaAm.style.animationPlayState = "running";
+				
+			}
+		}
+
+		baaAm.onclick = function(){
+			baaAm.style.display = "none";
+			videoBox.style.display = "block";
+			title.style.opacity = 1;
+			simul.style.opacity = 1;
+			univ.style.opacity = 0.2;
+
+			
+		}
+
+
+
+	</script>
+</body>
+</html>
